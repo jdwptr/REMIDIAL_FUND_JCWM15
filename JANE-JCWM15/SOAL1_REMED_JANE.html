@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMED SOAL 1</title>
+</head>
+
+<body>
+    <h1>Masukan kata :</h1>
+    <br>
+    <form id="input">
+        <input type="text" id="textinput" placeholder="masukan sebuah kata">
+    </form>
+    <br>
+    <br>
+
+    <button onclick="btnHitVokal()">HITUNG VOKAL</button>
+    <button onclick="btnVokal()">HURUF VOKAL</button>
+    <button onclick="btnNoVokal()">TANPA VOKAL</button>
+
+    <h1 id="hasil"></h1>
+</body>
+<script>
+    let form = document.getElementById('input')
+    let inputKata = document.getElementById('textinput')
+    let hasil = document.getElementById('hasil')
+
+    // vokal
+    const btnVokal = () => {
+        let kataArr = inputKata.value
+        let inputArr = kataArr.split('')
+
+        let vokal = []
+
+
+        for (let i = 0; i < inputArr.length; i++) {
+            if (inputArr[i] == 'a' || inputArr[i] == 'i' || inputArr[i] == 'u' || inputArr[i] == 'e' || inputArr[i] == 'o') {
+                vokal.push(inputArr[i])
+            }
+        }
+        hasil.innerHTML = `Huruf vokal : ${vokal} `
+    }
+    
+    const btnHitVokal = () => {
+        let kataArr = inputKata.value
+        let inputArr = kataArr.split('')
+
+        let vokal = []
+        let vokal_count = 0
+
+        for (let i = 0; i < inputArr.length; i++) {
+            if (inputArr[i] == 'a' || inputArr[i] == 'i' || inputArr[i] == 'u' || inputArr[i] == 'e' || inputArr[i] == 'o') {
+                vokal.push(inputArr[i])
+                vokal_count ++
+            }
+        }
+        hasil.innerHTML = `Hasil : ada ${vokal_count} huruf vokal`
+    }
+
+    const btnNoVokal = () => {
+        let kataArr = inputKata.value
+        let inputArr = kataArr.split('')
+        console.log(inputArr)
+        let Arr = inputArr.toUpperCase()
+        console.log('sort', Arr)
+
+        let vokal = []
+
+        for (let i = 0; i < inputArr.length; i++) {
+            if (Arr[i] == 'a' || Arr[i] == 'i' || Arr[i] == 'u' || inputArr[i] == 'e' || Arr[i] == 'o') {
+                vokal.push(Arr[i])
+            }
+        }
+        hasil.innerHTML = `Tanpa vokal : ${vokal} `
+    }
+
+</script>
+
+</html>

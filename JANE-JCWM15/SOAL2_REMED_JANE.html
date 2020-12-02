@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMEDIAL SOAL 2</title>
+    <style>
+        table, tr, th, td {
+            border: 1px solid;
+            border-color: black;
+            border-collapse: collapse;
+            text-align: center;
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h1>FORM PRODUCT:</h1>
+    <form id="formAdd">
+        <input type="text" placeholder="Product name" id="namaprod">
+        <input type="text" placeholder="Product price" id="hargaprod">
+        <br>
+    </form>
+    <form id="categ">
+        <label>Category</label>
+        <input type="radio" name='cate' value="food" id='food'>
+        <label>Food</label>
+        <input type="radio" name='cate' value="drink" id='drink'>
+        <label>Drink</label>
+        <input type="radio" name='cate' value="other" id='other'>
+        <label>Other</label>
+    </form>
+    
+    <br><br>
+    <button onclick="btnAdd(event)">ADD</button>
+
+    <h1>USERS DATA</h1>
+        <table id="daftarprod">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <script src="SOAL2.js"></script>
+</body>
+</html>
