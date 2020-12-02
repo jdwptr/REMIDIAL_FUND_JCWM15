@@ -101,17 +101,6 @@ function btnAdd (event) {
     let name = form['namaprod'].value
     let price = form['hargaprod'].value
 
-    if(name === '' || price === '' || hasilPilih === '') {
-        return alert ('INPUT MASIH KOSONG')
-    } else {
-        dataProd.push (new ProdBaru (
-            dataProd.length + 1,
-            form['namaprod'].value,
-            form['hargaprod'].value,
-            hasilPilih
-        ))
-    }
-
     let buttonCate
             if (formCate['food'].checked) {
                 buttonCate = formCate['food'].value
@@ -122,6 +111,18 @@ function btnAdd (event) {
             } else {
                 alert("INPUT MASIH KOSONG") //pake alert kalo ga mau pake checked di atas
             }
+
+    if(name === '' || price === '' || buttonCate === '') {
+        return alert ('INPUT MASIH KOSONG')
+    } else {
+        dataProd.push (new ProdBaru (
+            dataProd.length + 1,
+            form['namaprod'].value,
+            form['hargaprod'].value,
+            buttonCate
+        ))
+    }
+
 
     console.log(dataProd)
         // tampilkan lagi user
